@@ -29,10 +29,32 @@ class MainActivity : AppCompatActivity() {
         btnMinus = findViewById(R.id.btn_minus)
         btnMultiply = findViewById(R.id.btn_multiply)
         btnDivide = findViewById(R.id.btn_divide)
+
         btnAdd.setOnClickListener {
             num1 = edit1.text.toString()
             num2 = edit2.text.toString()
             result = Integer.parseInt(num1) + Integer.parseInt(num2)
+            textResult.text = "계산 결과 : "+ result
+        }
+
+        btnMinus.setOnClickListener {
+            num1 = edit1.text.toString()
+            num2 = edit2.text.toString()
+            result = Integer.parseInt(num1) - Integer.parseInt(num2)
+            textResult.text = "계산 결과 : "+ result
+        }
+
+        btnMultiply.setOnClickListener {
+            num1 = edit1.text.toString()
+            num2 = edit2.text.toString()
+            result = Integer.parseInt(num1) * Integer.parseInt(num2)
+            textResult.text = "계산 결과 : "+ result
+        }
+
+        btnDivide.setOnClickListener {
+            num1 = edit1.text.toString()
+            num2 = edit2.text.toString()
+            result = Integer.parseInt(num1) / Integer.parseInt(num2)
             textResult.text = "계산 결과 : "+ result
         }
 
