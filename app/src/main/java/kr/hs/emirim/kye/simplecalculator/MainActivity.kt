@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
         btnMinus.setOnClickListener {
             num1 = edit1.text.toString()
             num2 = edit2.text.toString()
+            if(num1 =="" || num2 ==""){
+                Toast.makeText(baseContext,"숫자를 입력하지 않고 버튼을 누르면 안됨티비!!!!!!", Toast.LENGTH_SHORT).show();
+                return@setOnClickListener
+            }
             result = num1.toDouble() - num2.toDouble()
             textResult.text = "계산 결과 : "+ result
         }
@@ -54,6 +58,10 @@ class MainActivity : AppCompatActivity() {
         btnMultiply.setOnClickListener {
             num1 = edit1.text.toString()
             num2 = edit2.text.toString()
+            if(num1 =="" || num2 ==""){
+                Toast.makeText(baseContext,"숫자를 입력하지 않고 버튼을 누르면 안됨티비!!!!!!", Toast.LENGTH_SHORT).show();
+                return@setOnClickListener
+            }
             result = num1.toDouble() * num2.toDouble()
             textResult.text = "계산 결과 : "+ result
         }
@@ -61,6 +69,14 @@ class MainActivity : AppCompatActivity() {
         btnDivide.setOnClickListener {
             num1 = edit1.text.toString()
             num2 = edit2.text.toString()
+            if(num1 =="" || num2 ==""){
+                Toast.makeText(baseContext,"숫자를 입력하지 않고 버튼을 누르면 안됨티비!!!!!!", Toast.LENGTH_SHORT).show();
+                return@setOnClickListener
+            }
+            if(num2.toDouble() == 0.0){
+                Toast.makeText(baseContext, "0으로 나누면 안됨티비 !!!", Toast.LENGTH_SHORT);
+                return@setOnClickListener
+            }
             result = num1.toDouble() / num2.toDouble()
             textResult.text = "계산 결과 : "+ result
         }
@@ -68,6 +84,10 @@ class MainActivity : AppCompatActivity() {
         btnRemain.setOnClickListener {
             num1 = edit1.text.toString()
             num2 = edit2.text.toString()
+            if(num1 =="" || num2 ==""){
+                Toast.makeText(baseContext,"숫자를 입력하지 않고 버튼을 누르면 안됨티비!!!!!!", Toast.LENGTH_SHORT).show();
+                return@setOnClickListener
+            }
             result = num1.toDouble() % num2.toDouble()
             textResult.text = "계산 결과 : "+ result
         }
